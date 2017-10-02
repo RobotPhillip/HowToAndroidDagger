@@ -9,6 +9,7 @@ import com.robotandpencils.app.inject.PerActivity;
 import javax.inject.Named;
 
 import dagger.Binds;
+import dagger.Module;
 import dagger.Provides;
 
 /**
@@ -18,6 +19,7 @@ import dagger.Provides;
  * Context and the activity `FragmentManager` are those dependencies.
  */
 
+@Module
 public abstract class BaseActivityModule {
 
     static final String ACTIVITY_FRAGMENT_MANAGER = "BaseActivityModule.activityFragmentManager";
