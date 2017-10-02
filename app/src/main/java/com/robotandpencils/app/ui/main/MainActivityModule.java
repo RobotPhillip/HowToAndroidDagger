@@ -1,12 +1,10 @@
-package com.robotandpencils.app.ui.common;
+package com.robotandpencils.app.ui.main;
 
 import android.app.Activity;
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerActivity;
-import com.robotandpencils.app.ui.main.view.MainFragment;
-import com.robotandpencils.app.ui.main.view.MainFragmentListener;
-import com.robotandpencils.app.ui.main.view.MainFragmentSubcomponent;
+import com.robotandpencils.app.ui.common.BaseActivityModule;
 
 import dagger.Binds;
 import dagger.Module;

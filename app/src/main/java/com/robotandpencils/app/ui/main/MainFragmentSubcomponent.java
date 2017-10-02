@@ -1,6 +1,8 @@
-package com.robotandpencils.app.ui.main.view;
+package com.robotandpencils.app.ui.main;
 
 import com.robotandpencils.app.inject.PerFragment;
+import com.robotandpencils.app.ui.main.MainFragment;
+import com.robotandpencils.app.ui.main.MainFragmentModule;
 
 import dagger.Subcomponent;
 import dagger.android.AndroidInjector;

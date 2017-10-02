@@ -1,4 +1,4 @@
-package com.robotandpencils.app.ui.common.view;
+package com.robotandpencils.app.ui.common;
 
 import dagger.Module;
 

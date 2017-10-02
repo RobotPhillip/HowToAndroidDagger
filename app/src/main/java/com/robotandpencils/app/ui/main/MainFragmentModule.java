@@ -1,9 +1,9 @@
-package com.robotandpencils.app.ui.main.view;
+package com.robotandpencils.app.ui.main;
 
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerFragment;
-import com.robotandpencils.app.ui.common.view.BaseFragmentModule;
+import com.robotandpencils.app.ui.common.BaseFragmentModule;
 
 import javax.inject.Named;
 

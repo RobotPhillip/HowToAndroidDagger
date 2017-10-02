@@ -1,11 +1,10 @@
-package com.robotandpencils.app.ui.common;
+package com.robotandpencils.app.ui.main;
 
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.robotandpencils.app.R;
-import com.robotandpencils.app.ui.main.view.MainFragment;
-import com.robotandpencils.app.ui.main.view.MainFragmentListener;
+import com.robotandpencils.app.ui.common.BaseActivity;
 
 import javax.annotation.Nullable;
 

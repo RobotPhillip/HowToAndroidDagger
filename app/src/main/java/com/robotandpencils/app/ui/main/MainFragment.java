@@ -1,4 +1,4 @@
-package com.robotandpencils.app.ui.main.view;
+package com.robotandpencils.app.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.robotandpencils.app.R;
-import com.robotandpencils.app.ui.common.view.BaseFragment;
+import com.robotandpencils.app.ui.common.BaseFragment;
 
 import javax.annotation.Nullable;
 import javax.inject.Inject;

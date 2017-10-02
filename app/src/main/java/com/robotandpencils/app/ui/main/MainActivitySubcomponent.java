@@ -1,4 +1,4 @@
-package com.robotandpencils.app.ui.common;
+package com.robotandpencils.app.ui.main;
 
 import com.robotandpencils.app.inject.PerActivity;
 

@@ -1,4 +1,4 @@
-package com.robotandpencils.app.ui.main.view;
+package com.robotandpencils.app.ui.main;
 
 /**
  * Created by pwray on 2017-10-02.
