@@ -9,9 +9,11 @@ import dagger.android.AndroidInjector;
 
 /**
  * Created by pwray on 2017-10-02.
+ *
+ * Injects main fragment dependencies.
+ *
+ * TODO (@ContributesAndroidInjector) remove this in favour of @ContributesAndroidInjector
  */
-
-// TODO (@ContributesAndroidInjector) remove this in favour of @ContributesAndroidInjector
 @PerFragment
 @Subcomponent(modules = MainFragmentModule.class)
 public interface MainFragmentSubcomponent extends AndroidInjector<MainFragment> {
