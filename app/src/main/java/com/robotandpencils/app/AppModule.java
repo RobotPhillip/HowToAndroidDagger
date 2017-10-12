@@ -6,6 +6,8 @@ import com.robotandpencils.app.ui.example_1.Example1Activity;
 import com.robotandpencils.app.ui.example_1.Example1ActivitySubcomponent;
 import com.robotandpencils.app.ui.example_2.Example2Activity;
 import com.robotandpencils.app.ui.example_2.Example2ActivitySubcomponent;
+import com.robotandpencils.app.ui.example_3.Example3Activity;
+import com.robotandpencils.app.ui.example_3.Example3ActivitySubcomponent;
 import com.robotandpencils.app.ui.main.MainActivity;
 import com.robotandpencils.app.ui.main.MainActivitySubcomponent;
 
@@ -26,7 +28,8 @@ import dagger.multibindings.IntoMap;
         subcomponents = {
                 MainActivitySubcomponent.class,
                 Example1ActivitySubcomponent.class,
-                Example2ActivitySubcomponent.class
+                Example2ActivitySubcomponent.class,
+                Example3ActivitySubcomponent.class
         })
 abstract class AppModule {
 
@@ -62,4 +65,15 @@ abstract class AppModule {
     @ActivityKey(Example2Activity.class)
     abstract AndroidInjector.Factory<? extends Activity>
     example2ActivityInjectorFactory(Example2ActivitySubcomponent.Builder builder);
+
+    /**
+     * Provides the injector for the {@link Example3Activity}, which has access to the dependencies
+     * provided by this application instance (singleton scoped objects).
+     */
+    // TODO (ContributesAndroidInjector) remove this in favour of @ContributesAndroidInjector.
+    @Binds
+    @IntoMap
+    @ActivityKey(Example3Activity.class)
+    abstract AndroidInjector.Factory<? extends Activity>
+    example3ActivityInjectorFactory(Example3ActivitySubcomponent.Builder builder);
 }
