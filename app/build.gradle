@@ -36,4 +36,9 @@ dependencies {
     // dagger classes
     compile "com.google.dagger:dagger:$daggerVersion"
     compile "com.google.dagger:dagger-android:$daggerVersion"
+
+    // butterknife
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
 }
