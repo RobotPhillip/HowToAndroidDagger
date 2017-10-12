@@ -1,4 +1,4 @@
-package com.robotandpencils.app.ui.common.view;
+package com.robotandpencils.app.ui.common;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -7,6 +7,7 @@ import com.robotandpencils.app.inject.PerFragment;
 
 import javax.inject.Named;
 
+import dagger.Module;
 import dagger.Provides;
 
 /**
@@ -16,6 +17,7 @@ import dagger.Provides;
  * So far, that is only the child `FragmentManager` named `CHILD_FRAGMENT_MANAGER`.
  */
 
+@Module
 public abstract class BaseFragmentModule {
 
     public static final String FRAGMENT = "BaseFragmentModule.fragment";
