@@ -16,14 +16,17 @@ import com.robotandpencils.app.util.SingletonUtil;
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 
 /**
  * Created by pwray on 2017-10-10.
- *
+ * <p>
  * A fragment that contains a button that does something.
  */
 
-public final class Example3ParentFragment extends BaseFragment implements View.OnClickListener {
+public final class Example3ParentFragment extends BaseFragment {
 
     @Inject
     SingletonUtil singletonUtil;
@@ -34,7 +37,8 @@ public final class Example3ParentFragment extends BaseFragment implements View.O
     @Inject
     PerFragmentUtil perFragmentUtil;
 
-    private TextView someText;
+    @BindView(R.id.some_text)
+    TextView someText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,24 +52,10 @@ public final class Example3ParentFragment extends BaseFragment implements View.O
         if (savedInstanceState == null) {
             addChildFragment(R.id.child_fragment_container, new Example3ChildFragment());
         }
-
-        // TODO (Butterknife) replace with butterknife view binding
-        someText = (TextView) view.findViewById(R.id.some_text);
-        view.findViewById(R.id.do_something).setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.do_something:
-                onDoSomethingClicked();
-                break;
-            default:
-                throw new IllegalArgumentException("Unhandled view: " + view.getId());
-        }
-    }
-
-    private void onDoSomethingClicked() {
+    @OnClick(R.id.do_something)
+    void onDoSomethingClicked() {
         String something = singletonUtil.doSomething();
         something += "\n" + perActivityUtil.doSomething();
         something += "\n" + perFragmentUtil.doSomething();
