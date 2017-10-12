@@ -3,7 +3,6 @@ package com.robotandpencils.app.ui.example_3.child_fragment;
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerChildFragment;
-import com.robotandpencils.app.ui.common.BaseActivityModule;
 import com.robotandpencils.app.ui.common.BaseChildFragmentModule;
 
 import javax.inject.Named;
@@ -15,10 +14,8 @@ import dagger.Module;
  * Created by pwray on 2017-10-10.
  */
 
-@Module(includes = {
-        BaseChildFragmentModule.class
-})
-abstract class Example3ChildFragmentModule {
+@Module(includes = BaseChildFragmentModule.class)
+public abstract class Example3ChildFragmentModule {
 
     /**
      * As per the contract specified in {@link BaseChildFragmentModule}; "This must be included in

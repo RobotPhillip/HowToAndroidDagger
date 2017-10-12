@@ -1,30 +1,25 @@
 package com.robotandpencils.app.ui.main;
 
 import android.app.Activity;
-import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerActivity;
+import com.robotandpencils.app.inject.PerFragment;
 import com.robotandpencils.app.ui.common.BaseActivityModule;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.android.AndroidInjector;
-import dagger.android.FragmentKey;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * Created by pwray on 2017-10-02.
  */
 
-@Module(includes = BaseActivityModule.class, subcomponents = MainFragmentSubcomponent.class)
-abstract class MainActivityModule {
+@Module(includes = BaseActivityModule.class)
+public abstract class MainActivityModule {
 
-    // TODO (ContributesAndroidInjector) remove this in favour of @ContributesAndroidInjector
-    @Binds
-    @IntoMap
-    @FragmentKey(MainFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment>
-    mainFragmentInjectorFactory(MainFragmentSubcomponent.Builder builder);
+    @PerFragment
+    @ContributesAndroidInjector(modules = MainFragmentModule.class)
+    abstract MainFragment mainFragmentInjector();
 
     @Binds
     @PerActivity

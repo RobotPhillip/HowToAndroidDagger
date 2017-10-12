@@ -16,7 +16,7 @@ import dagger.Module;
  * Provides example 1 fragment dependencies.
  */
 @Module(includes = BaseFragmentModule.class)
-abstract class Example2AFragmentModule {
+public abstract class Example2AFragmentModule {
 
     /**
      * As per the contract specified in {@link BaseFragmentModule}; "This must be included in all

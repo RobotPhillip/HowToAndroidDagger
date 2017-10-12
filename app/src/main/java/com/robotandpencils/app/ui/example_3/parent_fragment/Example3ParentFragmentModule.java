@@ -2,43 +2,34 @@ package com.robotandpencils.app.ui.example_3.parent_fragment;
 
 import android.app.Fragment;
 
+import com.robotandpencils.app.inject.PerChildFragment;
 import com.robotandpencils.app.inject.PerFragment;
-import com.robotandpencils.app.ui.common.BaseChildFragmentModule;
 import com.robotandpencils.app.ui.common.BaseFragmentModule;
 import com.robotandpencils.app.ui.example_3.child_fragment.Example3ChildFragment;
-import com.robotandpencils.app.ui.example_3.child_fragment.Example3ChildFragmentSubcomponent;
+import com.robotandpencils.app.ui.example_3.child_fragment.Example3ChildFragmentModule;
 
 import javax.inject.Named;
 
 import dagger.Binds;
 import dagger.Module;
-import dagger.android.AndroidInjector;
-import dagger.android.FragmentKey;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
 /**
  * Created by pwray on 2017-10-10.
- *
+ * <p>
  * Provides example 3 parent fragment dependencies.
  */
-@Module(includes = {
-        BaseFragmentModule.class},
-        subcomponents = {
-                Example3ChildFragmentSubcomponent.class
-        })
-abstract class Example3ParentFragmentModule {
+@Module(includes = BaseFragmentModule.class)
+public abstract class Example3ParentFragmentModule {
 
     /**
      * Provides the injector for the {@link Example3ChildFragment}, which has access to the
      * dependencies provided by this fragment and activity and application instance
      * (singleton scoped objects)
      */
-    // TODO (ContributesAndroidInjector) remove this in favor of @ContributesAndroidInjector
-    @Binds
-    @IntoMap
-    @FragmentKey(Example3ChildFragment.class)
-    abstract AndroidInjector.Factory<? extends Fragment>
-    example3ChildFragmentInjectorFactory(Example3ChildFragmentSubcomponent.Builder builder);
+    @PerChildFragment
+    @ContributesAndroidInjector(modules = Example3ChildFragmentModule.class)
+    abstract Example3ChildFragment example3ChildFragmentInjector();
 
     /**
      * As per the contract specified in {@link BaseFragmentModule}; "This must be included in all
@@ -52,4 +43,5 @@ abstract class Example3ParentFragmentModule {
     @Named(BaseFragmentModule.FRAGMENT)
     @PerFragment
     abstract Fragment fragment(Example3ParentFragment example3ParentFragment);
+
 }
