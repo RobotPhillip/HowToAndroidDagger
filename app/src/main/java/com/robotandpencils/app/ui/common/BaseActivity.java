@@ -6,6 +6,8 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 
+import com.robotandpencils.app.navigation.Navigator;
+
 import javax.annotation.Nullable;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -23,6 +25,9 @@ import dagger.android.HasFragmentInjector;
  */
 
 public abstract class BaseActivity extends Activity implements HasFragmentInjector {
+
+    @Inject
+    protected Navigator navigator;
 
     /**
      * The fragment manager is injected, instead of calling `getFragmentManager()`,
