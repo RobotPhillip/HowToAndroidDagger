@@ -5,10 +5,10 @@ import android.app.Activity;
 import com.robotandpencils.app.inject.PerActivity;
 import com.robotandpencils.app.inject.PerFragment;
 import com.robotandpencils.app.ui.common.BaseActivityModule;
-import com.robotandpencils.app.ui.example_2.fragment_a.Example2AFragment;
-import com.robotandpencils.app.ui.example_2.fragment_a.Example2AFragmentModule;
-import com.robotandpencils.app.ui.example_2.fragment_b.Example2BFragment;
-import com.robotandpencils.app.ui.example_2.fragment_b.Example2BFragmentModule;
+import com.robotandpencils.app.ui.example_2.fragment_a.view.Example2AFragment;
+import com.robotandpencils.app.ui.example_2.fragment_a.view.Example2AFragmentModule;
+import com.robotandpencils.app.ui.example_2.fragment_b.view.Example2BFragment;
+import com.robotandpencils.app.ui.example_2.fragment_b.view.Example2BFragmentModule;
 
 import dagger.Binds;
 import dagger.Module;

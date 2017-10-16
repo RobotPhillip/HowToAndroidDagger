@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import com.robotandpencils.app.R;
 import com.robotandpencils.app.ui.common.BaseActivity;
-import com.robotandpencils.app.ui.example_2.fragment_a.Example2AFragment;
-import com.robotandpencils.app.ui.example_2.fragment_b.Example2BFragment;
 import com.robotandpencils.app.ui.example_3.parent_fragment.Example3ParentFragment;
 
 import javax.annotation.Nullable;
