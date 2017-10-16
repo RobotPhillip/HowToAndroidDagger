@@ -1,10 +1,10 @@
-package com.robotandpencils.app.ui.main;
+package com.robotandpencils.app.ui.main.view;
 
 /**
  * Created by pwray on 2017-10-02.
  */
 
-interface MainFragmentListener {
+public interface MainFragmentListener {
 
     void onExample1Clicked();
 
