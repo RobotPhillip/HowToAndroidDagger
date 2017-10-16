@@ -1,9 +1,10 @@
-package com.robotandpencils.app.ui.example_1;
+package com.robotandpencils.app.ui.example_1.fragment.view;
 
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerFragment;
-import com.robotandpencils.app.ui.common.BaseFragmentModule;
+import com.robotandpencils.app.ui.common.view.BaseFragmentModule;
+import com.robotandpencils.app.ui.example_1.fragment.presenter.Example1PresenterModule;
 
 import javax.inject.Named;
 
@@ -15,7 +16,7 @@ import dagger.Module;
  * <p>
  * Provides example 1 fragment dependencies.
  */
-@Module(includes = BaseFragmentModule.class)
+@Module(includes = {BaseFragmentModule.class, Example1PresenterModule.class})
 public abstract class Example1FragmentModule {
 
     /**
@@ -30,4 +31,8 @@ public abstract class Example1FragmentModule {
     @Named(BaseFragmentModule.FRAGMENT)
     @PerFragment
     abstract Fragment fragment(Example1Fragment example1Fragment);
+
+    @Binds
+    @PerFragment
+    abstract Example1View example1View(Example1Fragment example1Fragment);
 }
