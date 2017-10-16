@@ -1,4 +1,4 @@
-package com.robotandpencils.app.ui.main;
+package com.robotandpencils.app.ui.main.view;
 
 import android.app.Fragment;
 
@@ -17,7 +17,7 @@ import dagger.Module;
  */
 
 @Module(includes = BaseFragmentModule.class)
-abstract class MainFragmentModule {
+public abstract class MainFragmentModule {
 
     /**
      * As per the contract specified in {@link BaseFragmentModule}; "This must be included in all
