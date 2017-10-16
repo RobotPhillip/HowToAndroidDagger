@@ -5,9 +5,8 @@ import android.os.Bundle;
 import javax.annotation.Nullable;
 
 /**
- * Created by pwray on 2017-10-16.
+ * A presenter that defines its own lifecycle methods.
  */
-
 public interface Presenter {
 
     /**
@@ -15,7 +14,7 @@ public interface Presenter {
      * onCreate() or onViewStateRestored() method respectively.
      *
      * @param savedInstanceState the saved instance state that contains state saved in
-     *                           {@link #onSaveInstanceState(Bundle}
+     *                           {@link #onSaveInstanceState(Bundle)}
      */
     void onStart(@Nullable Bundle savedInstanceState);
 
