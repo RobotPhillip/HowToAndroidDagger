@@ -3,7 +3,7 @@ package com.robotandpencils.app.ui.example_2.fragment_b.view;
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerFragment;
-import com.robotandpencils.app.ui.common.BaseFragmentModule;
+import com.robotandpencils.app.ui.common.view.BaseFragmentModule;
 import com.robotandpencils.app.ui.example_2.fragment_b.presenter.Example2BPresenterModule;
 
 import javax.inject.Named;
