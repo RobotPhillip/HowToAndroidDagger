@@ -3,7 +3,7 @@ package com.robotandpencils.app.util;
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerChildFragment;
-import com.robotandpencils.app.ui.common.BaseChildFragmentModule;
+import com.robotandpencils.app.ui.common.view.BaseChildFragmentModule;
 
 import javax.inject.Inject;
 import javax.inject.Named;
