@@ -1,12 +1,13 @@
-package com.robotandpencils.app.ui.example_3.parent_fragment;
+package com.robotandpencils.app.ui.example_3.parent_fragment.view;
 
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerChildFragment;
 import com.robotandpencils.app.inject.PerFragment;
 import com.robotandpencils.app.ui.common.BaseFragmentModule;
-import com.robotandpencils.app.ui.example_3.child_fragment.Example3ChildFragment;
-import com.robotandpencils.app.ui.example_3.child_fragment.Example3ChildFragmentModule;
+import com.robotandpencils.app.ui.example_3.child_fragment.view.Example3ChildFragment;
+import com.robotandpencils.app.ui.example_3.child_fragment.view.Example3ChildFragmentModule;
+import com.robotandpencils.app.ui.example_3.parent_fragment.presenter.Example3ParentPresenterModule;
 
 import javax.inject.Named;
 
@@ -19,7 +20,7 @@ import dagger.android.ContributesAndroidInjector;
  * <p>
  * Provides example 3 parent fragment dependencies.
  */
-@Module(includes = BaseFragmentModule.class)
+@Module(includes = {BaseFragmentModule.class, Example3ParentPresenterModule.class})
 public abstract class Example3ParentFragmentModule {
 
     /**
@@ -43,5 +44,9 @@ public abstract class Example3ParentFragmentModule {
     @Named(BaseFragmentModule.FRAGMENT)
     @PerFragment
     abstract Fragment fragment(Example3ParentFragment example3ParentFragment);
+
+    @Binds
+    @PerFragment
+    abstract Example3ParentView example3ParentView(Example3ParentFragment example3ParentFragment);
 
 }

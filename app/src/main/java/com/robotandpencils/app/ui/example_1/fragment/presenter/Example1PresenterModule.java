@@ -12,7 +12,6 @@ import dagger.Module;
  */
 @Module
 public abstract class Example1PresenterModule {
-
     @Binds
     @PerFragment
     abstract Example1Presenter example1Presenter(Example1PresenterImpl example1PresenterImpl);

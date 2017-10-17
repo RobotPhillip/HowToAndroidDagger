@@ -1,9 +1,10 @@
-package com.robotandpencils.app.ui.example_3.child_fragment;
+package com.robotandpencils.app.ui.example_3.child_fragment.view;
 
 import android.app.Fragment;
 
 import com.robotandpencils.app.inject.PerChildFragment;
 import com.robotandpencils.app.ui.common.BaseChildFragmentModule;
+import com.robotandpencils.app.ui.example_3.child_fragment.presenter.Example3ChildPresenterModule;
 
 import javax.inject.Named;
 
@@ -14,7 +15,7 @@ import dagger.Module;
  * Created by pwray on 2017-10-10.
  */
 
-@Module(includes = BaseChildFragmentModule.class)
+@Module(includes = {BaseChildFragmentModule.class, Example3ChildPresenterModule.class})
 public abstract class Example3ChildFragmentModule {
 
     /**
@@ -29,4 +30,8 @@ public abstract class Example3ChildFragmentModule {
     @Named(BaseChildFragmentModule.CHILD_FRAGMENT)
     @PerChildFragment
     abstract Fragment fragment(Example3ChildFragment example3ChildFragment);
+
+    @Binds
+    @PerChildFragment
+    abstract Example3ChildView example3ChildView(Example3ChildFragment example3ChildFragment);
 }
